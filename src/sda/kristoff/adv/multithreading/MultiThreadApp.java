@@ -2,7 +2,7 @@ package sda.kristoff.adv.multithreading;
 
 import java.math.BigDecimal;
 
-public class MultithreadApp {
+public class MultiThreadApp {
 
     public static void main(String[] args) throws InterruptedException {
 
@@ -10,7 +10,6 @@ public class MultithreadApp {
         Thread threadTwo = new Thread(() -> factorialWorker());
         Thread threadThree = new Thread(() -> factorialWorker());
         Thread threadFour = new Thread(() -> factorialWorker());
-
 
         long start = System.currentTimeMillis();
         threadOne.start();
