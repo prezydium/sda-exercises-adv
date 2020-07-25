@@ -12,6 +12,8 @@ public class SortingExercises {
         );
         reverseSortOne(nicknames);
         System.out.println(nicknames);
+        reverseSortIgnoreCase(nicknames);
+        System.out.println(nicknames);
 
     }
 
@@ -21,5 +23,11 @@ public class SortingExercises {
 
     private static void reverseSortTwo(List<String> stringsToBeSorted) {
         stringsToBeSorted.sort(Collections.reverseOrder());
+    }
+
+    private static void reverseSortIgnoreCase(List<String> stringsToBeSorted) {
+        //    stringsToBeSorted.sort((element1, element2) -> element1.compareToIgnoreCase(element2));
+        stringsToBeSorted.sort(String::compareToIgnoreCase);
+        Collections.reverse(stringsToBeSorted);
     }
 }
