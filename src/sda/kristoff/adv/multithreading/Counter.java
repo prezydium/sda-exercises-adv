@@ -4,11 +4,15 @@ public class Counter {
 
     private int count;
 
-    public void increment() {
+    public synchronized void increment() {
         count++;
     }
 
-    public void decrement() {
+    public synchronized void decrement() {
         count--;
+    }
+
+    public int getCount() {
+        return count;
     }
 }

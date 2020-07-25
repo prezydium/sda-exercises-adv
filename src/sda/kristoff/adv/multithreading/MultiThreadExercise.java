@@ -2,11 +2,20 @@ package sda.kristoff.adv.multithreading;
 
 public class MultiThreadExercise {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         Counter counter = new Counter();
 
+        IncrementingThread incrementingThread = new IncrementingThread(counter);
+        DecrementingThread decrementingThread = new DecrementingThread(counter);
 
+        incrementingThread.start();
+        decrementingThread.start();
+
+        incrementingThread.join();
+        decrementingThread.join();
+
+        System.out.println(counter.getCount());
     }
 
     /*
