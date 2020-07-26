@@ -22,12 +22,12 @@ public class PersonalJournal {
         long ceilingDifference = ChronoUnit.DAYS.between(searchedDate, ceilingKey);
 
         LocalDate floorKey = entries.floorKey(searchedDate);
-        long floorDifference = Math.abs(ChronoUnit.DAYS.between(searchedDate, floorKey));
+        long floorDifference = ChronoUnit.DAYS.between(floorKey, searchedDate);
 
         if (ceilingDifference > floorDifference) {
-            System.out.println(entries.get(floorKey));
+            System.out.println(floorKey + " " + entries.get(floorKey));
         } else {
-            System.out.println(entries.get(ceilingKey));
+            System.out.println(ceilingKey + " " + entries.get(ceilingKey));
         }
 
     }
