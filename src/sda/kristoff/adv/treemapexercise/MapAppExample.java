@@ -15,6 +15,7 @@ public class MapAppExample {
         journal.printFromNewestRecord();
         journal.printClosestRecord(LocalDate.of(2020, 7, 21));
         journal.printClosestRecord(LocalDate.of(2020, 7, 23));
+        journal.printClosestRecord(LocalDate.of(1999, 1, 1));
     }
 
 }
